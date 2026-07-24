@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite this repository when using or reviewing the counterexample or its reproducibility materials."
+title: "A counterexample to MathPages Wanted Problem 1"
+type: software
+version: 1.0.0
+date-released: 2026-07-23
+authors:
+  - name: "Teagualicious"
+  - name: "OpenAI GPT-5.6 Pro"
+repository-code: "https://github.com/Teagualicious/Mathpages-Wanted-Problem-1"
+url: "https://github.com/Teagualicious/Mathpages-Wanted-Problem-1/releases/tag/v1.0.0"
+license: MIT
+abstract: >-
+  A self-contained proof and reproducibility package for a binary-reversal
+  product counterexample to MathPages Wanted Problem 1, including independent
+  exact-integer verifiers, original and audited search artifacts, provenance,
+  hashes, and automated tests. The package makes no historical-priority claim
+  and explicitly records that 29-bit minimality is false for the problem as
+  stated.
+keywords:
+  - binary reversal
+  - point-set distances
+  - counterexample
+  - reproducible mathematics
+  - exhaustive search
