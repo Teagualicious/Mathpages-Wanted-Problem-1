@@ -1,0 +1,43 @@
+name: Verify v1.0.0 release assets
+
+on:
+  push:
+    paths:
+      - .github/workflows/verify-release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Query and validate release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view v1.0.0 \
+            --json tagName,targetCommitish,url,assets \
+            > /tmp/release-verification.json
+          jq -e '.tagName == "v1.0.0"' /tmp/release-verification.json
+          jq -e '.assets | map(.name) | index("Mathpages-Wanted-Problem-1-v1.0.0.zip") != null' \
+            /tmp/release-verification.json
+          jq -e '.assets | map(.name) | index("counterexample.pdf") != null' \
+            /tmp/release-verification.json
+          jq . /tmp/release-verification.json > provenance/RELEASE_VERIFICATION.json
+
+      - name: Commit release verification record
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add provenance/RELEASE_VERIFICATION.json
+          if git diff --cached --quiet; then
+            echo "Release verification record is unchanged."
+          else
+            git commit -m "Record v1.0.0 release verification"
+            git push origin HEAD:main
+          fi
