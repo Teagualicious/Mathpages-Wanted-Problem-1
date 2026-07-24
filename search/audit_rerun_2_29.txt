@@ -1,0 +1,104 @@
+===== L=2 =====
+NONE L=2 records=1 collision_groups=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3576 exit=0
+===== L=3 =====
+NONE L=3 records=2 collision_groups=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3584 exit=0
+===== L=4 =====
+NONE L=4 records=4 collision_groups=1
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3632 exit=0
+===== L=5 =====
+NONE L=5 records=8 collision_groups=2
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3580 exit=0
+===== L=6 =====
+NONE L=6 records=16 collision_groups=6
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3588 exit=0
+===== L=7 =====
+NONE L=7 records=32 collision_groups=12
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3524 exit=0
+===== L=8 =====
+NONE L=8 records=64 collision_groups=28
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3580 exit=0
+===== L=9 =====
+NONE L=9 records=128 collision_groups=56
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3588 exit=0
+===== L=10 =====
+NONE L=10 records=256 collision_groups=120
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3588 exit=0
+===== L=11 =====
+NONE L=11 records=512 collision_groups=240
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3592 exit=0
+===== L=12 =====
+NONE L=12 records=1024 collision_groups=494
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3584 exit=0
+===== L=13 =====
+NONE L=13 records=2048 collision_groups=986
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3592 exit=0
+===== L=14 =====
+NONE L=14 records=4096 collision_groups=2004
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3652 exit=0
+===== L=15 =====
+NONE L=15 records=8192 collision_groups=4016
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3712 exit=0
+===== L=16 =====
+NONE L=16 records=16384 collision_groups=8091
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3664 exit=0
+===== L=17 =====
+NONE L=17 records=32768 collision_groups=16201
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3776 exit=0
+===== L=18 =====
+NONE L=18 records=65536 collision_groups=32534
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=4336 exit=0
+===== L=19 =====
+NONE L=19 records=131072 collision_groups=65120
+elapsed=0.01 user=0.01 sys=0.00 maxrss_kb=5360 exit=0
+===== L=20 =====
+NONE L=20 records=262144 collision_groups=130528
+elapsed=0.02 user=0.02 sys=0.00 maxrss_kb=7408 exit=0
+===== L=21 =====
+COUNTEREXAMPLE L=21 product=1681449752125
+n=1100125 pop=10 bits=100001100100101011101 rev=1528417 counts=3,4,4,4,3,4,2,3,3,1,3,3,1,2,1,1,1,1,0,1
+n=1269125 pop=11 bits=100110101110110000101 rev=1324889 counts=4,5,5,5,4,5,3,4,4,4,1,3,1,2,1,1,1,1,0,1
+n=1324889 pop=11 bits=101000011011101011001 rev=1269125 counts=4,5,5,5,4,5,3,4,4,4,1,3,1,2,1,1,1,1,0,1
+n=1528417 pop=10 bits=101110101001001100001 rev=1100125 counts=3,4,4,4,3,4,2,3,3,1,3,3,1,2,1,1,1,1,0,1
+elapsed=0.04 user=0.02 sys=0.01 maxrss_kb=11504 exit=0
+===== L=22 =====
+NONE L=22 records=1048576 collision_groups=523036
+elapsed=0.09 user=0.07 sys=0.01 maxrss_kb=19696 exit=0
+===== L=23 =====
+NONE L=23 records=2097152 collision_groups=1046565
+elapsed=0.20 user=0.18 sys=0.01 maxrss_kb=36080 exit=0
+===== L=24 =====
+NONE L=24 records=4194304 collision_groups=2094375
+elapsed=0.38 user=0.37 sys=0.00 maxrss_kb=68848 exit=0
+===== L=25 =====
+NONE L=25 records=8388608 collision_groups=4189686
+elapsed=0.81 user=0.76 sys=0.04 maxrss_kb=134384 exit=0
+===== L=26 =====
+COUNTEREXAMPLE L=26 product=1596745510975125
+n=34747125 pop=12 bits=10000100100011001011110101 rev=45953313 counts=4,5,5,5,6,3,5,5,2,2,3,3,4,1,2,2,1,2,1,2,1,0,1,0,1
+n=36913317 pop=10 bits=10001100110100000010100101 rev=43256625 counts=2,3,3,3,4,1,3,1,3,1,2,2,1,3,2,2,1,2,1,2,1,0,1,0,1
+n=43256625 pop=10 bits=10100101000000101100110001 rev=36913317 counts=2,3,3,3,4,1,3,1,3,1,2,2,1,3,2,2,1,2,1,2,1,0,1,0,1
+n=45953313 pop=12 bits=10101111010011000100100001 rev=34747125 counts=4,5,5,5,6,3,5,5,2,2,3,3,4,1,2,2,1,2,1,2,1,0,1,0,1
+elapsed=1.56 user=1.53 sys=0.03 maxrss_kb=265392 exit=0
+===== L=27 =====
+COUNTEREXAMPLE L=27 product=6794783755974397
+n=69612637 pop=12 bits=100001001100011010001011101 rev=97608481 counts=4,4,4,5,3,4,3,5,4,3,3,2,3,3,3,2,2,2,1,1,1,1,1,1,0,1
+n=80633093 pop=13 bits=100110011100101110100000101 rev=84267929 counts=5,5,5,6,4,5,4,6,5,4,4,5,1,3,3,2,2,2,1,1,1,1,1,1,0,1
+n=84267929 pop=13 bits=101000001011101001110011001 rev=80633093 counts=5,5,5,6,4,5,4,6,5,4,4,5,1,3,3,2,2,2,1,1,1,1,1,1,0,1
+n=97608481 pop=12 bits=101110100010110001100100001 rev=69612637 counts=4,4,4,5,3,4,3,5,4,3,3,2,3,3,3,2,2,2,1,1,1,1,1,1,0,1
+elapsed=3.21 user=3.11 sys=0.09 maxrss_kb=527600 exit=0
+===== L=28 =====
+COUNTEREXAMPLE L=28 product=25275722555719349
+n=137507573 pop=13 bits=1000001100100011001011110101 rev=183813313 counts=5,5,5,6,5,4,6,5,3,3,3,3,3,3,4,2,2,2,1,2,2,1,1,0,1,0,1
+n=147653317 pop=11 bits=1000110011010000001011000101 rev=171182897 counts=3,3,3,4,3,2,4,1,4,2,2,2,2,2,1,4,2,2,1,2,2,1,1,0,1,0,1
+n=171182897 pop=11 bits=1010001101000000101100110001 rev=147653317 counts=3,3,3,4,3,2,4,1,4,2,2,2,2,2,1,4,2,2,1,2,2,1,1,0,1,0,1
+n=183813313 pop=13 bits=1010111101001100010011000001 rev=137507573 counts=5,5,5,6,5,4,6,5,3,3,3,3,3,3,4,2,2,2,1,2,2,1,1,0,1,0,1
+elapsed=6.61 user=6.37 sys=0.23 maxrss_kb=1051884 exit=0
+===== L=29 =====
+COUNTEREXAMPLE L=29 product=112450225317133405
+n=306612085 pop=14 bits=10010010001101000011101110101 rev=366750793 counts=5,6,6,6,5,5,5,5,4,5,3,3,5,2,3,3,3,3,2,3,1,2,2,1,1,1,0,1
+n=323241893 pop=13 bits=10011010001000100011110100101 rev=347882585 counts=4,5,5,5,4,4,4,4,3,4,2,2,2,4,3,3,3,3,2,3,1,2,2,1,1,1,0,1
+n=347882585 pop=13 bits=10100101111000100010001011001 rev=323241893 counts=4,5,5,5,4,4,4,4,3,4,2,2,2,4,3,3,3,3,2,3,1,2,2,1,1,1,0,1
+n=366750793 pop=14 bits=10101110111000010110001001001 rev=306612085 counts=5,6,6,6,5,5,5,5,4,5,3,3,5,2,3,3,3,3,2,3,1,2,2,1,1,1,0,1
+elapsed=14.82 user=13.41 sys=1.41 maxrss_kb=2100464 exit=0
