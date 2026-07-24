@@ -1,0 +1,124 @@
+$ make verify
+python3 verification/verify_counterexample.py
+MathPages Wanted Problem 1 counterexample verifier (Python)
+x                  = 353492451
+y                  = 364428675
+bit length         = 29
+binary(x)          = 10101000100011101110111100011
+binary(y)          = 10101101110001011110110000011
+reverse(x)         = 418869525
+binary(reverse(x)) = 11000111101110111000100010101
+reverse(y)         = 406299573
+binary(reverse(y)) = 11000001101111010001110110101
+x*reverse(x)       = 148067215041455775
+y*reverse(y)       = 148067215041455775
+support(x)         = {0, 1, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 20, 24, 26, 28}
+support(y)         = {0, 1, 7, 8, 10, 11, 12, 13, 15, 19, 20, 21, 23, 24, 26, 28}
+distance histogram(x) = {1: 8, 2: 8, 3: 5, 4: 10, 5: 8, 6: 8, 7: 5, 8: 7, 9: 6, 10: 7, 11: 4, 12: 5, 13: 4, 14: 6, 15: 4, 16: 4, 17: 2, 18: 3, 19: 3, 20: 3, 21: 2, 22: 1, 23: 2, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1}
+distance histogram(y) = {1: 8, 2: 8, 3: 7, 4: 7, 5: 7, 6: 5, 7: 7, 8: 7, 9: 6, 10: 5, 11: 7, 12: 6, 13: 7, 14: 4, 15: 4, 16: 4, 17: 2, 18: 3, 19: 3, 20: 3, 21: 2, 22: 1, 23: 2, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1}
+differing distances    = [3, 4, 5, 6, 7, 10, 11, 12, 13, 14]
+multiplicity at d=3    = 5 versus 7
+COUNTEREXAMPLE VERIFIED
+node verification/verify_counterexample.js
+MathPages Wanted Problem 1 counterexample verifier (JavaScript BigInt)
+x                  = 353492451
+y                  = 364428675
+bit length         = 29
+binary(x)          = 10101000100011101110111100011
+binary(y)          = 10101101110001011110110000011
+reverse(x)         = 418869525
+binary(reverse(x)) = 11000111101110111000100010101
+reverse(y)         = 406299573
+binary(reverse(y)) = 11000001101111010001110110101
+x*reverse(x)       = 148067215041455775
+y*reverse(y)       = 148067215041455775
+support(x)         = {0, 1, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 20, 24, 26, 28}
+support(y)         = {0, 1, 7, 8, 10, 11, 12, 13, 15, 19, 20, 21, 23, 24, 26, 28}
+distance histogram(x) = {1: 8, 2: 8, 3: 5, 4: 10, 5: 8, 6: 8, 7: 5, 8: 7, 9: 6, 10: 7, 11: 4, 12: 5, 13: 4, 14: 6, 15: 4, 16: 4, 17: 2, 18: 3, 19: 3, 20: 3, 21: 2, 22: 1, 23: 2, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1}
+distance histogram(y) = {1: 8, 2: 8, 3: 7, 4: 7, 5: 7, 6: 5, 7: 7, 8: 7, 9: 6, 10: 5, 11: 7, 12: 6, 13: 7, 14: 4, 15: 4, 16: 4, 17: 2, 18: 3, 19: 3, 20: 3, 21: 2, 22: 1, 23: 2, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1}
+differing distances    = [3, 4, 5, 6, 7, 10, 11, 12, 13, 14]
+multiplicity at d=3    = 5 versus 7
+COUNTEREXAMPLE VERIFIED
+sha256sum -c search/SHA256SUMS.txt
+search/search_binary_exactlen.cpp: OK
+search/search_len29_out.txt: OK
+search/original_rerun_2_29.txt: OK
+search/audit_exhaustive.cpp: OK
+search/audit_rerun_2_29.txt: OK
+verification/verify_counterexample.py: OK
+verification/verify_counterexample.js: OK
+proof/counterexample.tex: OK
+proof/counterexample.pdf: OK
+
+$ python3 verification/verify_counterexample.py 1100125 1269125
+MathPages Wanted Problem 1 counterexample verifier (Python)
+x                  = 1100125
+y                  = 1269125
+bit length         = 21
+binary(x)          = 100001100100101011101
+binary(y)          = 100110101110110000101
+reverse(x)         = 1528417
+binary(reverse(x)) = 101110101001001100001
+reverse(y)         = 1324889
+binary(reverse(y)) = 101000011011101011001
+x*reverse(x)       = 1681449752125
+y*reverse(y)       = 1681449752125
+support(x)         = {0, 2, 3, 4, 6, 8, 11, 14, 15, 20}
+support(y)         = {0, 2, 7, 8, 10, 11, 12, 14, 16, 17, 20}
+distance histogram(x) = {1: 3, 2: 4, 3: 4, 4: 4, 5: 3, 6: 4, 7: 2, 8: 3, 9: 3, 10: 1, 11: 3, 12: 3, 13: 1, 14: 2, 15: 1, 16: 1, 17: 1, 18: 1, 20: 1}
+distance histogram(y) = {1: 4, 2: 5, 3: 5, 4: 5, 5: 4, 6: 5, 7: 3, 8: 4, 9: 4, 10: 4, 11: 1, 12: 3, 13: 1, 14: 2, 15: 1, 16: 1, 17: 1, 18: 1, 20: 1}
+differing distances    = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+multiplicity at d=3    = 4 versus 5
+COUNTEREXAMPLE VERIFIED
+
+$ node verification/verify_counterexample.js 1100125 1269125
+MathPages Wanted Problem 1 counterexample verifier (JavaScript BigInt)
+x                  = 1100125
+y                  = 1269125
+bit length         = 21
+binary(x)          = 100001100100101011101
+binary(y)          = 100110101110110000101
+reverse(x)         = 1528417
+binary(reverse(x)) = 101110101001001100001
+reverse(y)         = 1324889
+binary(reverse(y)) = 101000011011101011001
+x*reverse(x)       = 1681449752125
+y*reverse(y)       = 1681449752125
+support(x)         = {0, 2, 3, 4, 6, 8, 11, 14, 15, 20}
+support(y)         = {0, 2, 7, 8, 10, 11, 12, 14, 16, 17, 20}
+distance histogram(x) = {1: 3, 2: 4, 3: 4, 4: 4, 5: 3, 6: 4, 7: 2, 8: 3, 9: 3, 10: 1, 11: 3, 12: 3, 13: 1, 14: 2, 15: 1, 16: 1, 17: 1, 18: 1, 20: 1}
+distance histogram(y) = {1: 4, 2: 5, 3: 5, 4: 5, 5: 4, 6: 5, 7: 3, 8: 4, 9: 4, 10: 4, 11: 1, 12: 3, 13: 1, 14: 2, 15: 1, 16: 1, 17: 1, 18: 1, 20: 1}
+differing distances    = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+multiplicity at d=3    = 4 versus 5
+COUNTEREXAMPLE VERIFIED
+
+$ g++ -O3 -std=c++17 -DNDEBUG -Wall -Wextra -Wpedantic search/search_binary_exactlen.cpp -o /tmp/search_binary_exactlen
+PASS: original search compiled with no diagnostics
+
+$ g++ -O3 -std=c++20 -DNDEBUG -Wall -Wextra -Wpedantic search/audit_exhaustive.cpp -o /tmp/audit_exhaustive
+PASS: audit search compiled with no diagnostics
+
+$ /tmp/search_binary_exactlen 12
+L=12 records=1024 sizeof=13
+generated
+sorted
+none; groups=2 candidates=2
+
+$ /tmp/audit_exhaustive 12
+NONE L=12 records=1024 collision_groups=494
+
+$ cmp search/search_len29_out.txt /mnt/data/mathpages_repo_build/logs/exhaustive_2_28/L29.stdout
+PASS: reproduced L=29 stdout is byte-for-byte identical to original raw output
+
+$ python3 YAML/CFF parse check
+PASS: parsed CITATION.cff
+PASS: parsed .github/workflows/verify.yml
+PASS: parsed .github/workflows/release.yml
+
+$ pdfinfo proof/counterexample.pdf | selected fields
+Pages:           2
+Page size:       612 x 792 pts (letter)
+File size:       205807 bytes
+PDF version:     1.7
+
+ALL LOCAL CHECKS PASSED
