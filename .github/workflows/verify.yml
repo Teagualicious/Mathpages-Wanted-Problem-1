@@ -1,0 +1,56 @@
+name: Verify counterexample
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Verify 29-bit pair in Python
+        run: python3 verification/verify_counterexample.py
+
+      - name: Verify 29-bit pair in JavaScript BigInt
+        run: node verification/verify_counterexample.js
+
+      - name: Verify audit's 21-bit pair in Python
+        run: python3 verification/verify_counterexample.py 1100125 1269125
+
+      - name: Verify audit's 21-bit pair in JavaScript BigInt
+        run: node verification/verify_counterexample.js 1100125 1269125
+
+      - name: Check available SHA-256 hashes
+        run: sha256sum --ignore-missing -c search/SHA256SUMS.txt
+
+      - name: Compile original search with warnings
+        run: >-
+          g++ -O3 -std=c++17 -DNDEBUG -Wall -Wextra -Wpedantic
+          search/search_binary_exactlen.cpp -o /tmp/search_binary_exactlen
+
+      - name: Compile audit search with warnings
+        run: >-
+          g++ -O3 -std=c++20 -DNDEBUG -Wall -Wextra -Wpedantic
+          search/audit_exhaustive.cpp -o /tmp/audit_exhaustive
+
+      - name: Search smoke tests
+        run: |
+          /tmp/search_binary_exactlen 12
+          /tmp/audit_exhaustive 12
