@@ -1,0 +1,93 @@
+name: Build proof and publish v1.0.0
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Verify exact-integer calculations
+        run: |
+          python3 verification/verify_counterexample.py
+          node verification/verify_counterexample.js
+          python3 verification/verify_counterexample.py 1100125 1269125
+          node verification/verify_counterexample.js 1100125 1269125
+
+      - name: Build proof PDF from committed TeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: counterexample.tex
+          working_directory: proof
+          latexmk_use_xelatex: false
+          args: -pdf -interaction=nonstopmode -halt-on-error
+
+      - name: Refresh hashes and verify package
+        run: |
+          sha256sum \
+            search/search_binary_exactlen.cpp \
+            search/search_len29_out.txt \
+            search/original_rerun_2_29.txt \
+            search/audit_exhaustive.cpp \
+            search/audit_rerun_2_29.txt \
+            verification/verify_counterexample.py \
+            verification/verify_counterexample.js \
+            proof/counterexample.tex \
+            proof/counterexample.pdf \
+            > search/SHA256SUMS.txt
+          sha256sum -c search/SHA256SUMS.txt
+
+      - name: Commit generated PDF and final hashes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add proof/counterexample.pdf search/SHA256SUMS.txt
+          if git diff --cached --quiet; then
+            echo "Generated artifacts already match the repository."
+          else
+            git commit -m "Build proof PDF and finalize hashes"
+            git push origin HEAD:main
+          fi
+          echo "RELEASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Build reproducibility ZIP
+        run: >-
+          git archive --format=zip
+          --prefix=Mathpages-Wanted-Problem-1-v1.0.0/
+          --output=Mathpages-Wanted-Problem-1-v1.0.0.zip
+          "$RELEASE_SHA"
+
+      - name: Create tag and GitHub Release if absent
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.0.0 >/dev/null 2>&1; then
+            echo "Release v1.0.0 already exists; leaving it unchanged."
+          else
+            gh release create v1.0.0 \
+              --target "$RELEASE_SHA" \
+              --title "v1.0.0 - MathPages counterexample reproducibility package" \
+              --notes-file RELEASE_NOTES.md \
+              "Mathpages-Wanted-Problem-1-v1.0.0.zip#Complete reproducibility package" \
+              "proof/counterexample.pdf#Self-contained mathematical note"
+          fi
