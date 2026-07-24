@@ -17,17 +17,32 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check whether v1.0.0 already exists
+        id: existing-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.0.0 >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release v1.0.0 already exists; no release artifacts will be rebuilt."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Python
+        if: steps.existing-release.outputs.exists != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
       - name: Set up Node.js
+        if: steps.existing-release.outputs.exists != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "22"
 
       - name: Verify exact-integer calculations
+        if: steps.existing-release.outputs.exists != 'true'
         run: |
           python3 verification/verify_counterexample.py
           node verification/verify_counterexample.js
@@ -35,6 +50,7 @@ jobs:
           node verification/verify_counterexample.js 1100125 1269125
 
       - name: Build proof PDF from committed TeX
+        if: steps.existing-release.outputs.exists != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: counterexample.tex
@@ -43,6 +59,7 @@ jobs:
           args: -pdf -interaction=nonstopmode -halt-on-error
 
       - name: Refresh hashes and verify package
+        if: steps.existing-release.outputs.exists != 'true'
         run: |
           sha256sum \
             search/search_binary_exactlen.cpp \
@@ -58,6 +75,7 @@ jobs:
           sha256sum -c search/SHA256SUMS.txt
 
       - name: Commit generated PDF and final hashes
+        if: steps.existing-release.outputs.exists != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -71,23 +89,21 @@ jobs:
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: Build reproducibility ZIP
+        if: steps.existing-release.outputs.exists != 'true'
         run: >-
           git archive --format=zip
           --prefix=Mathpages-Wanted-Problem-1-v1.0.0/
           --output=Mathpages-Wanted-Problem-1-v1.0.0.zip
           "$RELEASE_SHA"
 
-      - name: Create tag and GitHub Release if absent
+      - name: Create tag and GitHub Release
+        if: steps.existing-release.outputs.exists != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.0.0 >/dev/null 2>&1; then
-            echo "Release v1.0.0 already exists; leaving it unchanged."
-          else
-            gh release create v1.0.0 \
-              --target "$RELEASE_SHA" \
-              --title "v1.0.0 - MathPages counterexample reproducibility package" \
-              --notes-file RELEASE_NOTES.md \
-              "Mathpages-Wanted-Problem-1-v1.0.0.zip#Complete reproducibility package" \
-              "proof/counterexample.pdf#Self-contained mathematical note"
-          fi
+          gh release create v1.0.0 \
+            --target "$RELEASE_SHA" \
+            --title "v1.0.0 - MathPages counterexample reproducibility package" \
+            --notes-file RELEASE_NOTES.md \
+            "Mathpages-Wanted-Problem-1-v1.0.0.zip#Complete reproducibility package" \
+            "proof/counterexample.pdf#Self-contained mathematical note"
