@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\title{A Counterexample to MathPages Wanted Problem 1}
+\author{Reproducibility note}
+\date{July 23, 2026}
+
+\newcommand{\rev}{\operatorname{rev}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give two positive integers whose products with their binary reversals are equal, although the point sets encoded by their 1-bits have different multisets of pairwise distances. All values in the proof are exact integers derived from the two decimal inputs. The proof is independent of the search that found the example.
+\end{abstract}
+
+\section*{Problem and notation}
+MathPages Wanted Problem 1 asks whether
+\begin{quote}
+``prove or disprove that the equality $xx'=yy'$ implies that $x$ and $y$ have the same multi-set of point-to point distances.''
+\end{quote}
+See \url{https://www.mathpages.com/home/mwlist.htm}. For a positive integer $n$, let $\rev(n)$ be the integer obtained by reversing its canonical binary digit string. Let $S(n)$ be the set of positions of its 1-bits, numbered from 0 at the least significant bit. The distance multiset is
+\[
+\mathcal D(S)=\{\!\{|b-a|:a,b\in S,\ a<b\}\!\}.
+\]
+
+\section*{Counterexample}
+Take
+\[
+x=353492451,\qquad y=364428675.
+\]
+Their binary expansions, calculated from these decimal integers, are
+\[
+x=(\mathtt{10101000100011101110111100011})_2,
+\qquad
+y=(\mathtt{10101101110001011110110000011})_2.
+\]
+Reversing the displayed digit strings gives
+\[
+\rev(x)=(\mathtt{11000111101110111000100010101})_2=418869525,
+\]
+\[
+\rev(y)=(\mathtt{11000001101111010001110110101})_2=406299573.
+\]
+Exact multiplication yields
+\[
+353492451\cdot 418869525=148067215041455775
+\]
+and
+\[
+364428675\cdot 406299573=148067215041455775.
+\]
+Hence $x\rev(x)=y\rev(y)$.
+
+The supports of the 1-bits are
+\[
+S(x)=\{0, 1, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 20, 24, 26, 28\}
+\]
+and
+\[
+S(y)=\{0, 1, 7, 8, 10, 11, 12, 13, 15, 19, 20, 21, 23, 24, 26, 28\}.
+\]
+The pairs in $S(x)$ separated by distance 3 are
+\[
+(5,8),\ (7,10),\ (8,11),\ (11,14),\ (12,15),
+\]
+so distance 3 occurs 5 times in $\mathcal D(S(x))$. The corresponding pairs in $S(y)$ are
+\[
+(7,10),\ (8,11),\ (10,13),\ (12,15),\ (20,23),\ (21,24),\ (23,26),
+\]
+so distance 3 occurs 7 times in $\mathcal D(S(y))$. Therefore
+\[
+\mathcal D(S(x))\ne\mathcal D(S(y)),
+\]
+even though $x\rev(x)=y\rev(y)$. This disproves the implication in MathPages Wanted Problem 1.\hfill\(\square\)
+
+\section*{Scope of the result}
+The validity proof above is unconditional and requires no exhaustive search. The original search artifact in the accompanying repository filters collisions by equal popcount and therefore does not prove 29-bit minimality for the problem as stated. An all-collision audit finds a 21-bit counterexample. Historical priority is not asserted; that requires a literature review and confirmation from the problem maintainer.
+
+\end{document}
