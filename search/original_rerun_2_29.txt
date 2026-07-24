@@ -1,0 +1,172 @@
+===== L=2 =====
+L=2 records=1 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3632 exit=0
+===== L=3 =====
+L=3 records=2 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3576 exit=0
+===== L=4 =====
+L=4 records=4 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3592 exit=0
+===== L=5 =====
+L=5 records=8 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3580 exit=0
+===== L=6 =====
+L=6 records=16 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3596 exit=0
+===== L=7 =====
+L=7 records=32 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3580 exit=0
+===== L=8 =====
+L=8 records=64 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3568 exit=0
+===== L=9 =====
+L=9 records=128 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3560 exit=0
+===== L=10 =====
+L=10 records=256 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3596 exit=0
+===== L=11 =====
+L=11 records=512 sizeof=13
+generated
+sorted
+none; groups=0 candidates=0
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3588 exit=0
+===== L=12 =====
+L=12 records=1024 sizeof=13
+generated
+sorted
+none; groups=2 candidates=2
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3584 exit=0
+===== L=13 =====
+L=13 records=2048 sizeof=13
+generated
+sorted
+none; groups=6 candidates=6
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3608 exit=0
+===== L=14 =====
+L=14 records=4096 sizeof=13
+generated
+sorted
+none; groups=12 candidates=12
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3720 exit=0
+===== L=15 =====
+L=15 records=8192 sizeof=13
+generated
+sorted
+none; groups=16 candidates=16
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3720 exit=0
+===== L=16 =====
+L=16 records=16384 sizeof=13
+generated
+sorted
+none; groups=37 candidates=37
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3668 exit=0
+===== L=17 =====
+L=17 records=32768 sizeof=13
+generated
+sorted
+none; groups=55 candidates=55
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=3696 exit=0
+===== L=18 =====
+L=18 records=65536 sizeof=13
+generated
+sorted
+none; groups=106 candidates=106
+elapsed=0.00 user=0.00 sys=0.00 maxrss_kb=4208 exit=0
+===== L=19 =====
+L=19 records=131072 sizeof=13
+generated
+sorted
+none; groups=160 candidates=160
+elapsed=0.01 user=0.01 sys=0.00 maxrss_kb=4928 exit=0
+===== L=20 =====
+L=20 records=262144 sizeof=13
+generated
+sorted
+none; groups=288 candidates=288
+elapsed=0.02 user=0.02 sys=0.00 maxrss_kb=6640 exit=0
+===== L=21 =====
+L=21 records=524288 sizeof=13
+generated
+sorted
+none; groups=425 candidates=424
+elapsed=0.04 user=0.04 sys=0.00 maxrss_kb=9968 exit=0
+===== L=22 =====
+L=22 records=1048576 sizeof=13
+generated
+sorted
+none; groups=740 candidates=740
+elapsed=0.08 user=0.08 sys=0.00 maxrss_kb=16624 exit=0
+===== L=23 =====
+L=23 records=2097152 sizeof=13
+generated
+sorted
+none; groups=987 candidates=987
+elapsed=0.18 user=0.17 sys=0.01 maxrss_kb=29936 exit=0
+===== L=24 =====
+L=24 records=4194304 sizeof=13
+generated
+sorted
+none; groups=1753 candidates=1753
+elapsed=0.39 user=0.36 sys=0.02 maxrss_kb=56496 exit=0
+===== L=25 =====
+L=25 records=8388608 sizeof=13
+generated
+sorted
+none; groups=2570 candidates=2570
+elapsed=0.98 user=0.75 sys=0.23 maxrss_kb=109808 exit=0
+===== L=26 =====
+L=26 records=16777216 sizeof=13
+generated
+sorted
+none; groups=4203 candidates=4199
+elapsed=1.96 user=1.59 sys=0.37 maxrss_kb=216304 exit=0
+===== L=27 =====
+L=27 records=33554432 sizeof=13
+generated
+sorted
+none; groups=5774 candidates=5770
+elapsed=3.94 user=3.17 sys=0.77 maxrss_kb=429232 exit=0
+===== L=28 =====
+L=28 records=67108864 sizeof=13
+generated
+sorted
+none; groups=9088 candidates=9079
+elapsed=7.87 user=6.71 sys=1.15 maxrss_kb=855280 exit=0
+===== L=29 =====
+L=29 records=134217728 sizeof=13
+generated
+sorted
+COUNTEREXAMPLE L=29 product=148067215041455775
+n=353492451 pop=16 bits=10101000100011101110111100011 rev=418869525 counts=8,8,5,10,8,8,5,7,6,7,4,5,4,6,4,4,2,3,3,3,2,1,2,1,1,1,1,1
+n=364428675 pop=16 bits=10101101110001011110110000011 rev=406299573 counts=8,8,7,7,7,5,7,7,6,5,7,6,7,4,4,4,2,3,3,3,2,1,2,1,1,1,1,1
+n=406299573 pop=16 bits=11000001101111010001110110101 rev=364428675 counts=8,8,7,7,7,5,7,7,6,5,7,6,7,4,4,4,2,3,3,3,2,1,2,1,1,1,1,1
+n=418869525 pop=16 bits=11000111101110111000100010101 rev=353492451 counts=8,8,5,10,8,8,5,7,6,7,4,5,4,6,4,4,2,3,3,3,2,1,2,1,1,1,1,1
+elapsed=16.08 user=14.01 sys=2.07 maxrss_kb=1707248 exit=0
